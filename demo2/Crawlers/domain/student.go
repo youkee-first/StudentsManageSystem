@@ -6,3 +6,9 @@ type Student struct {
 	FloorNum int
 	RoomNum int
 }
+
+type Date struct {
+	Year int
+	Month int
+	Day int
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>寝室值日</title>
+</head>
+<body style="text-align:center">
+    <h2>寝室值日</h2>
+    <div style="background-color: skyblue;margin-bottom: 10px;width: 400px;height: 150px;margin-left: auto;margin-right: auto;padding: 50px">
+        <form action="http://localhost:8888/SetDutyDate" method="post">
+            <span class="input-group-addon" id="basic-addon1">学号</span>
+            <input style="width: 50px" type="text" class="form-control" placeholder="学号" aria-describedby="basic-addon1" name="id"><br>
+            <span class="input-group-addon" id="basic-addon1">年 </span>
+            <input style="width: 50px" type="text" class="form-control" placeholder="year" aria-describedby="basic-addon1" name="year">
+            <span class="input-group-addon" id="basic-addon1">月 </span>
+            <input style="width: 50px" type="text" class="form-control" placeholder="month" aria-describedby="basic-addon1" name="month">
+            <span class="input-group-addon" id="basic-addon1">日 </span>
+            <input style="width: 50px" type="text" class="form-control" placeholder="day" aria-describedby="basic-addon1" name="day">
+            <button type="commit" class="btn btn-default">设置</button>
+        </form>
+    </div>
+<div style="background-color: pink;width: 400px;height: 150px;margin-left: auto;margin-right: auto;padding: 50px">
+    <div>
+        <form action="http://localhost:8888/FindDutyStudent" method="post">
+        <span class="input-group-addon" id="basic-addon1">年 </span>
+        <input style="width: 50px" type="text" class="form-control" placeholder="year" aria-describedby="basic-addon1" name="year">
+        <span class="input-group-addon" id="basic-addon1">月 </span>
+        <input style="width: 50px" type="text" class="form-control" placeholder="month" aria-describedby="basic-addon1" name="month">
+        <span class="input-group-addon" id="basic-addon1">日 </span>
+        <input style="width: 50px" type="text" class="form-control" placeholder="day" aria-describedby="basic-addon1" name="day">
+        <input type="submit" value="查询">
+        </form>
+    </div>
+</div>
+    <div>
+        <table class="table table-bordered" style="border: 1px solid black">
+            <tr>
+                <td>学号</td>
+            </tr>
+            {{range $i,$v := .}}
+                <tr>
+                    <td>{{$v}}</td>
+                </tr>
+            {{else}}
+                <span>暂时没有数据</span>
+            {{end}}
+        </table>
+    </div>
+
+
+</body>
+</html>
